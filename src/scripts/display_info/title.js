@@ -1,15 +1,19 @@
 import switchDisp from './switch_disp';
 
-const TitleButton = () => {
-  let show = false;
-
-  document.getElementById("title-button").addEventListener("click", ()=>switchDisp(!show));
-
-  return(
-    <button className="title-button" id="title-button">
-      Perfect Fit
-    </button>
-  )
+class TitleButton {
+  constructor(){
+    let show = false;
+    
+    document.getElementById("title-button").addEventListener("click", ()=>switchDisp(!show));
+  }
+    
+  render(){
+    return(
+      <button className="title-button" id="title-button">
+        Perfect Fit
+      </button>
+    )
+  }
 }
 
 
