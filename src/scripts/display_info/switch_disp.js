@@ -14,19 +14,15 @@ const SwitchDisp=show =>{
     option.addEventListener("click", (e)=>{
       switch (e.currentTarget.value) {
         case "tess":
-          debugger
           show, dispInfo, selected = setSelect("tess", show, dispInfo, selected);
           break;
         case "gold":
-          // debugger
           show, dispInfo, selected = setSelect("gold", show, dispInfo, selected);
           break;
         case "pyth":
-          // debugger
           show, dispInfo, selected = setSelect("pyth", show, dispInfo, selected);
           break;
         default:
-          // debugger
           break;
       }
     })
@@ -42,19 +38,17 @@ const setSelect=(val, show, dispInfo, selected)=>{
 }
 
 const setMathDisp = (show, dispInfo, selected) =>{
-  // debugger
   let switchContainer = document.getElementById("switch-disp-container");
   let infoContainer = document.getElementById('info-container');
-  true;
+
   if (show){
-    debugger
     switchContainer.style.display = "flex";
     switchContainer.style.zIndex = 2;
     infoContainer.style.display = "none";
     infoContainer.style.zIndex = -1;
     infoContainer.innerHTML = ""
+    
   } else if (dispInfo) {
-    debugger
     switchContainer.style.display = "none";
     switchContainer.style.zIndex = "-1";
     infoContainer.style.display = "flex";
@@ -70,12 +64,10 @@ const setMathDisp = (show, dispInfo, selected) =>{
       case "pyth":
         PythagTheorem()
         break;
-        
       default:
         break;
     }
   } else {
-    debugger
     switchContainer.style.display = "none";
     switchContainer.style.zIndex = "-1";
     infoContainer.style.display = "none";
