@@ -23,4 +23,14 @@
   z-index: -1;
   position: relative;
   width: 200px;
+  height: auto;
+}
+
+.info-container{
+  background-color: blue;
+  display: flex;
+  z-index: -1;
+  position: relative;
+  width: 200px;
+  height: auto;
 }

@@ -2,42 +2,64 @@ import Tess from './math_info/tessellation_info/tessellation_main';
 import GoldRatio from'./math_info/gold_ratio_info';
 import PythagTheorem from './math_info/pythag_theorem_info';
 
-const SwitchDisp=(show)=>{
+const SwitchDisp=show =>{
   let dispInfo = false;
   let selected;
   
+  setMathDisp(show, dispInfo, selected);
+  
   const switchOptions = document.getElementsByClassName("switch-disp-op");
 
-  Array.from(switchOptions).forEach( option => 
+  Array.from(switchOptions).some( option => 
     option.addEventListener("click", (e)=>{
-      debugger
-      switch (e.target.currentValue) {
-        case "Tessellations":
+      switch (e.currentTarget.value) {
+        case "tess":
           debugger
-          setSelect("tess");
+          show, dispInfo, selected = setSelect("tess", show, dispInfo, selected);
           break;
-        case "Golden Ratio":
-          debugger
-          setSelect("gold");
+        case "gold":
+          // debugger
+          show, dispInfo, selected = setSelect("gold", show, dispInfo, selected);
           break;
-        case "Pythagorean Theorem":
-          debugger
-          setSelect("pyth");
+        case "pyth":
+          // debugger
+          show, dispInfo, selected = setSelect("pyth", show, dispInfo, selected);
           break;
         default:
-          debugger
+          // debugger
           break;
       }
     })
   );
+}
 
-  let switchContainer = document.getElementById("switch-disp-container")
+const setSelect=(val, show, dispInfo, selected)=>{
+  show = !show;
+  dispInfo = !dispInfo;
+  selected = val;
+  setMathDisp(show, dispInfo, selected);
+  return show, dispInfo, selected;
+}
+
+const setMathDisp = (show, dispInfo, selected) =>{
+  // debugger
+  let switchContainer = document.getElementById("switch-disp-container");
+  let infoContainer = document.getElementById('info-container');
+  true;
   if (show){
+    debugger
     switchContainer.style.display = "flex";
     switchContainer.style.zIndex = 2;
+    infoContainer.style.display = "none";
+    infoContainer.style.zIndex = -1;
+    infoContainer.innerHTML = ""
   } else if (dispInfo) {
+    debugger
     switchContainer.style.display = "none";
     switchContainer.style.zIndex = "-1";
+    infoContainer.style.display = "flex";
+    infoContainer.style.zIndex = 2;
+    
     switch (selected) {
       case "tess":
         Tess()
@@ -52,14 +74,13 @@ const SwitchDisp=(show)=>{
       default:
         break;
     }
+  } else {
+    debugger
+    switchContainer.style.display = "none";
+    switchContainer.style.zIndex = "-1";
+    infoContainer.style.display = "none";
+    infoContainer.style.zIndex = -1;
   }
-}
-        
-const setSelect=(val)=>{
-  show = false;
-  dispInfo = true;
-  selected = val;
-  debugger
 }
 
 export default SwitchDisp;
