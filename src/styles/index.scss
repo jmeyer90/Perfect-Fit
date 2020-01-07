@@ -9,30 +9,54 @@
 }
 
 .canvas{
+  display: flex;
+  overflow: hidden;
   width: 100%;
   height: 100%;
 }
 
 .ui{
   position: absolute;
+  flex-direction: column;
+  display: flex;
+  top: 3%;
+  left: 3%;
 }
 
 .title-button{
   top: 5%;
   left: 5%;
+  border-radius: 4px;
+  width: 200px;
+  padding: 8px;
+  font-family: 'Gothic';
+  font-weight: 700;
+  font-size: 18px;
 }
 
 .switch-disp-container{
-  background-color: blue;
   display: flex;
+  flex-direction: column;
   z-index: -1;
   position: relative;
   width: 200px;
   height: auto;
 }
 
+.switch-disp-op{
+  display: flex;
+  border: none;
+  background-color: #EFF1F5;
+  line-height: 1.8;
+  padding: 5px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 17px;
+  font-weight: 700;
+}
+
 .info-container{
-  background-color: blue;
+  background-color: #EFF1F5;
+  border: 1px solid lightgrey;
   display: flex;
   z-index: -1;
   position: relative;

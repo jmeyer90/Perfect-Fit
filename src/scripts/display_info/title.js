@@ -1,5 +1,5 @@
 // import switchDisp from './switch_disp';
-import SwitchDisp from './switch_disp';
+import SwitchDisp from './switch_info';
 
 const TitleButton = () => {
   let show = false;
@@ -7,7 +7,6 @@ const TitleButton = () => {
   document.getElementById("title-button")
   .addEventListener("click", ()=>{
     show = !show;
-    debugger
     SwitchDisp(show);
   });
       

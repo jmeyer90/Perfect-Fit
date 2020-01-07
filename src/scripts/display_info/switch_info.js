@@ -28,8 +28,6 @@ const SwitchDisp=show =>{
       }
     })
   );
-
-  canvasMain(selected);
 }
 
 const setSelect=(val, show, dispInfo, selected)=>{
@@ -56,6 +54,7 @@ const setMathDisp = (show, dispInfo, selected) =>{
     switchContainer.style.zIndex = "-1";
     infoContainer.style.display = "flex";
     infoContainer.style.zIndex = 2;
+    canvasMain(selected);
     
     switch (selected) {
       case "tess":
