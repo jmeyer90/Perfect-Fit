@@ -1,0 +1,26 @@
+.canvas-container{
+  position: absolute;
+  display: flex;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #EFF1F5;
+}
+
+.ui{
+  position: absolute;
+}
+
+.title-button{
+  top: 5%;
+  left: 5%;
+}
+
+.switch-disp-container{
+  background-color: blue;
+  display: flex;
+  z-index: -1;
+  position: relative;
+  width: 200px;
+}
