@@ -1,3 +1,4 @@
+import canvasMain from '../visualizations/canvas_main';
 import Tess from './math_info/tessellation_info/tessellation_main';
 import GoldRatio from'./math_info/gold_ratio_info';
 import PythagTheorem from './math_info/pythag_theorem_info';
@@ -27,6 +28,8 @@ const SwitchDisp=show =>{
       }
     })
   );
+
+  canvasMain(selected);
 }
 
 const setSelect=(val, show, dispInfo, selected)=>{
@@ -47,7 +50,7 @@ const setMathDisp = (show, dispInfo, selected) =>{
     infoContainer.style.display = "none";
     infoContainer.style.zIndex = -1;
     infoContainer.innerHTML = ""
-    
+
   } else if (dispInfo) {
     switchContainer.style.display = "none";
     switchContainer.style.zIndex = "-1";
