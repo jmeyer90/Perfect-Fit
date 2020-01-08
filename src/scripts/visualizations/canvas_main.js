@@ -18,8 +18,8 @@ const canvasMain = (selected) =>{
       debugger
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       triTessVis(ctx);
-      // sqrTessVis(ctx);
-      // hexTessVis(ctx);
+      hexTessVis(ctx);
+      sqrTessVis(ctx);
       break;
     case "gold":
       ctx.clearRect(0, 0, canvas.width, canvas.height);
