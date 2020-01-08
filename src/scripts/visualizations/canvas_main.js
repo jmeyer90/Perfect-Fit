@@ -15,8 +15,8 @@ const canvasMain = (selected) =>{
   switch (selected) {
     case "tess":
       debugger
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
       // wipeCanvas(ctx);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       triTessVis(ctx);
       hexTessVis(ctx);
       sqrTessVis(ctx);
@@ -37,15 +37,16 @@ const canvasMain = (selected) =>{
 const wipeCanvas = ctx => {
   let x = 0;
   let height = window.innerHeight;
-
-  setInterval(()=>{
-    ctx.strokeStyle = "#EFF1F5";
-    ctx.beginPath();
-    ctx.moveTo(x, 0);
-    ctx.lineTo(x, height);
-    ctx.stroke();
-    x++;
-  }, 5)
+  return new Promise ((response, request) =>{
+    setInterval(()=>{
+      ctx.strokeStyle = "#EFF1F5";
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, height);
+      ctx.stroke();
+      x++;
+    }, 5)
+  })
 }
 
 export default canvasMain;
