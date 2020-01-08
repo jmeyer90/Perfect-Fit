@@ -48,7 +48,7 @@ The External APIs used are:
 * webpack.prod.js
 * postcss.config.js
 
-The following files are boiler-plate code taken from https://github.com/mrcjbradley/js_project_skeleton
+The following files are boiler-plate code taken from [Mrcjbradley JS Project Skeleton](https://github.com/mrcjbradley/js_project_skeleton)
 
 webpack.common.js
 webpackdev.js
@@ -58,4 +58,4 @@ postcss.config.js
 index.html
 .gitignore
 
-The method for creating tessellations was inspired by the following article at HTML5CanvasTutorials.com https://www.html5canvastutorials.com/advanced/html5-canvas-triangle-pattern/
+The method for creating tessellations was inspired by the following code from [Cthulahoop at Codepen.com](https://codepen.io/Cthulahoop/pen/umcvo)

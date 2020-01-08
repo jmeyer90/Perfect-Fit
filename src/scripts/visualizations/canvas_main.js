@@ -10,25 +10,31 @@ const canvasMain = (selected) =>{
   ctx.canvas.height = window.innerHeight;
   ctx.fillRect(0, 0, canvas.width, (canvas.height / 3));
   ctx.lineWidth = .4;
+  let disp = false
 
   debugger
   switch (selected) {
     case "tess":
       debugger
-      // wipeCanvas(ctx);
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      triTessVis(ctx);
-      hexTessVis(ctx);
-      sqrTessVis(ctx);
+      if(disp) wipeCanvas(ctx);
+      triTessVis(ctx)
+      hexTessVis(ctx)
+      sqrTessVis(ctx)
+      disp = true;
       break;
+
     case "gold":
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      if (disp) wipeCanvas(ctx);
       goldRatioVis(ctx)
+      disp = true;
       break;
+
     case "pyth":
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      if (disp) wipeCanvas(ctx);
       pythagTheoremVis(ctx)
+      disp = true;
       break;
+
     default:
       break
   }
@@ -38,15 +44,14 @@ const wipeCanvas = ctx => {
   let x = 0;
   let height = window.innerHeight;
   return new Promise ((response, request) =>{
-    setInterval(()=>{
-      ctx.strokeStyle = "#EFF1F5";
-      ctx.beginPath();
-      ctx.moveTo(x, 0);
-      ctx.lineTo(x, height);
-      ctx.stroke();
+    const clearInt = setInterval(()=>{
+      ctx.clearRect(x, 0, 1, height);
       x++;
-    }, 5)
+      if (x === window.innerWidth) clearInterval(clearInt)
+    }, 1)
   })
+
+
 }
 
 export default canvasMain;
