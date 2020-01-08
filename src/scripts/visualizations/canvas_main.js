@@ -9,7 +9,6 @@ const canvasMain = (selected) =>{
   ctx.canvas.width = window.innerWidth;
   ctx.canvas.height = window.innerHeight;
   ctx.fillRect(0, 0, canvas.width, (canvas.height / 3));
-  // ctx.scale(0.17,0.17);
   ctx.lineWidth = .4;
 
   debugger
@@ -17,6 +16,7 @@ const canvasMain = (selected) =>{
     case "tess":
       debugger
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // wipeCanvas(ctx);
       triTessVis(ctx);
       hexTessVis(ctx);
       sqrTessVis(ctx);
@@ -32,6 +32,20 @@ const canvasMain = (selected) =>{
     default:
       break
   }
+}
+
+const wipeCanvas = ctx => {
+  let x = 0;
+  let height = window.innerHeight;
+
+  setInterval(()=>{
+    ctx.strokeStyle = "#EFF1F5";
+    ctx.beginPath();
+    ctx.moveTo(x, 0);
+    ctx.lineTo(x, height);
+    ctx.stroke();
+    x++;
+  }, 5)
 }
 
 export default canvasMain;
