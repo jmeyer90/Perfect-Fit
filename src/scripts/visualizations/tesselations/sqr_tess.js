@@ -1,4 +1,9 @@
-// import { BLUE1, BLUE2 } from '../../../styles/color_utils';
+// This code was inspired by the work of both
+// Cthulahoop at CodePen.com 
+// https://codepen.io/Cthulahoop/pen/umcvo)
+// and 
+// Siamand and StackOverflox.com
+// https://stackoverflow.com/questions/43788062/html-canvas-javascript-scale-object-on-hover
 
 const sqrTessVis = ctx => {
   const numRows = 3;

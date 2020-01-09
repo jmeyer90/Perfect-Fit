@@ -1,3 +1,10 @@
+// This code was inspired by the work of both
+// Cthulahoop at CodePen.com 
+// https://codepen.io/Cthulahoop/pen/umcvo)
+// and 
+// Siamand and StackOverflox.com
+// https://stackoverflow.com/questions/43788062/html-canvas-javascript-scale-object-on-hover
+
 const hexTessVis = ctx => {
   const numRows = 6;
   const hexSideLength = window.innerHeight / 3.0 / numRows;
