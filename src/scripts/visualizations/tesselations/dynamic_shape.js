@@ -5,7 +5,7 @@
 class DynamicShape {
   constructor(canvas){
     this.canvs = canvas;
-    this.shapes - [];
+    this.shapes = [];
   }
 
   addShape(shape){
@@ -26,9 +26,13 @@ class DynamicShape {
     return null;
   }
 
-  draw(){
+  drawTri(){
     for(let i = 0; i < this.shapes.length; i++){
-      this.shapes[i].draw()
+      this.shapes[i].drawUpTri();
+      i++;
+      this.shapes[i].drawDownTri();
     }
   }
 }
+
+export default DynamicShape;
