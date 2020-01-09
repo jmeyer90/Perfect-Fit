@@ -8,15 +8,12 @@ const canvasMain = (selected) =>{
   const ctx = canvas.getContext('2d');
   ctx.canvas.width = window.innerWidth;
   ctx.canvas.height = window.innerHeight;
-  ctx.fillRect(0, 0, canvas.width, (canvas.height / 3));
   ctx.lineWidth = .4;
   let disp = false
 
-  debugger
   switch (selected) {
     case "tess":
-      debugger
-      if(disp) wipeCanvas(ctx);
+      if (disp) wipeCanvas(ctx);
       triTessVis(ctx)
       hexTessVis(ctx)
       sqrTessVis(ctx)

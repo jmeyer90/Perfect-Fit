@@ -56,7 +56,6 @@ const hexTessVis = ctx => {
       ctx.fill();
     }
   }
-  debugger
 }
 
 export default hexTessVis;

@@ -1,5 +1,5 @@
 const triTessVis = ctx =>{
-  const numRows = 4;
+  const numRows = 3;
   const triSideLength = window.innerHeight / 3.0 / numRows;
   const lineHeight = Math.floor(triSideLength * Math.sqrt(3) / 2);
   const midpoint = triSideLength / 2;

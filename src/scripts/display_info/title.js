@@ -1,4 +1,3 @@
-// import switchDisp from './switch_disp';
 import SwitchDisp from './switch_info';
 
 const TitleButton = () => {

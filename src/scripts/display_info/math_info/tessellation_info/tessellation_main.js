@@ -23,14 +23,14 @@ const tessHeader = (tessInfo) =>{
   tessInfo.appendChild(header);
   
   let headerTitle = document.createElement('h1');
-  headerTitle.setAttribute('class', 'header-title');
+  headerTitle.setAttribute('class', 'disp-title');
   headerTitle.innerHTML = 'Tessellations';
   header.appendChild(headerTitle);
   
-  let headerDesc = document.createElement('p');
+  let headerDesc = document.createElement('section');
   headerDesc.setAttribute('class', 'header-desc');
-  // tessDesc( headerDesc );
-  headerDesc.innerHTML = "Tessellate Description"
+  tessDesc( headerDesc );
+  // headerDesc.innerHTML = "Tessellate Description";
   headerTitle.append(headerDesc);
 }
 
@@ -40,7 +40,7 @@ const tessFooter = (tessInfo) => {
   tessInfo.appendChild(footer);
   
   let footerTitle = document.createElement('h1');
-  footerTitle.setAttribute('class', 'footer-title');
+  footerTitle.setAttribute('class', 'disp-title');
   footerTitle.innerHTML = 'Links';
   footer.appendChild(footerTitle);
   
@@ -53,13 +53,45 @@ const tessFooter = (tessInfo) => {
 const tessDesc = ( headerDesc) =>{
   const text = "A tessellation is a pattern made by a regular polygon which completely fills the are with no gaps. " +
     "There are only 3 regular polygons which can make a tessellation. "+
-    "These polgyons are: \n Triangle \n Hexagon \n Square ";
+    "These polgyons are:";
 
   const shapes = ["Traingle", "Hexagon", "Square"];
   
-  const formula = "In order for a polygon to be a regular tessellation, the sum of it's interior angles must be ";
+  const formulaText = "In order for a polygon to be a regular tessellation, " +
+    "the sum of the polygon's interior angles must be divisible by 180 degrees.";
 
+  const formulaProps = "The &#x2211; of all interior &#x2221;'s mod 180 must equal 0.";
 
+  const tessText = document.createElement('p');
+  tessText.setAttribute('class', 'header-text')
+  tessText.innerHTML = text;
+
+  const shapeUl = document.createElement('ul')
+  shapeUl.setAttribute('class', 'shape-ul');
+  shapes.forEach(shape => {
+    let shapeLi = document.createElement('li')
+    shapeLi.setAttribute('class', 'shape-li')
+    shapeLi.innerHTML = shape;
+    shapeUl.appendChild(shapeLi);
+  });
+
+  const formulaTitle = document.createElement('h2');
+  formulaTitle.setAttribute('class', 'disp-title');
+  formulaTitle.innerHTML = "Formula";
+  
+  const formulaPropsP = document.createElement('p');
+  formulaPropsP.setAttribute('class', 'formula-props');
+  formulaPropsP.innerHTML = formulaProps;
+
+  const formulaTextP = document.createElement('p')
+  formulaTextP.setAttribute('class', 'formula-text');
+  formulaTextP.innerHTML = formulaText
+
+  headerDesc.appendChild(tessText);
+  headerDesc.appendChild(shapeUl);
+  headerDesc.appendChild(formulaTitle);
+  headerDesc.appendChild(formulaTextP);
+  headerDesc.appendChild(formulaPropsP);
 }
 
 export default TessMain

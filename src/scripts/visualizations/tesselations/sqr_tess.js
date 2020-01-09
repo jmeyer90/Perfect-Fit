@@ -1,7 +1,7 @@
 // import { BLUE1, BLUE2 } from '../../../styles/color_utils';
 
 const sqrTessVis = ctx => {
-  const numRows = 4;
+  const numRows = 3;
   const sqrSideLength = window.innerHeight / 3 / numRows;
   const numCols = Math.ceil(window.innerWidth /sqrSideLength);
   const startHeight = window.innerHeight / 3 * 2;
@@ -26,7 +26,6 @@ const sqrTessVis = ctx => {
       ctx.fill();
     }
   }
-  debugger
 }
 
 export default sqrTessVis;
