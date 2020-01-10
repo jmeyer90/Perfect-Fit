@@ -1,12 +1,12 @@
-import Hexagon from "./hexagon";
-import DynamicShape from './dynamic_shape';
-
 // This code was inspired by the work of both
 // Cthulahoop at CodePen.com 
 // https://codepen.io/Cthulahoop/pen/umcvo)
 // and 
 // Siamand and StackOverflox.com
 // https://stackoverflow.com/questions/43788062/html-canvas-javascript-scale-object-on-hover
+
+import Hexagon from "./hexagon";
+import DynamicShape from './dynamic_shape';
 
 const hexTessVis = ctx => {
   const numRows = 6;
@@ -41,7 +41,6 @@ const hexTessVis = ctx => {
       let x = col * (2 * hexSideLength + 2 * diagLength) - 2 * diagLength;
       let y = row * lineHeight + startHeight + diagLength - vertShift;
 
-      //x,y,diagLength, hexSideLength, ctx
       let leftHex = new Hexagon(x, y, hexSideLength, diagLength, ctx); 
       let rightHex = new Hexagon(x, y, hexSideLength, diagLength, ctx);
 
@@ -76,30 +75,3 @@ const hexTessVis = ctx => {
 }
 
 export default hexTessVis;
-
-
-// ctx.fillStyle = "#ACC2F1"; // BLUE1
-// ctx.strokeStyle = "#000"; // BLUE1
-// ctx.beginPath();
-// ctx.moveTo(x, y);
-// ctx.lineTo(x + diagLength, y + diagLength);
-// ctx.lineTo(x + diagLength + hexSideLength, y + diagLength);
-// ctx.lineTo(x + 2*diagLength + hexSideLength, y);
-// ctx.lineTo(x + diagLength + hexSideLength, y - diagLength);
-// ctx.lineTo(x + diagLength, y-diagLength);
-// ctx.closePath();
-// ctx.stroke();
-// ctx.fill();
-
-// ctx.fillStyle = "#84A7F2"; //BLUE2
-// ctx.strokeStyle = "#000"; //BLUE2
-// ctx.beginPath();
-// ctx.moveTo(x + diagLength + hexSideLength, y - diagLength);
-// ctx.lineTo(x + 2 * diagLength + hexSideLength, y);
-// ctx.lineTo(x + 2 * diagLength + 2 * hexSideLength, y);
-// ctx.lineTo(x + 3 * diagLength + 2 * hexSideLength, y - diagLength);
-// ctx.lineTo(x + 2 * diagLength + 2* hexSideLength, y - 2 * diagLength);
-// ctx.lineTo(x + 2 * diagLength + hexSideLength, y - 2* diagLength);
-// ctx.closePath();
-// ctx.stroke();
-// ctx.fill();

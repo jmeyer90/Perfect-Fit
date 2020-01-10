@@ -26,9 +26,9 @@ class DynamicShape {
     if( shape instanceof Triangle){
       shape.orientation === "up" ? shape.drawUpTri() : shape.drawDownTri();
     } else if (shape instanceof Hexagon){
-
+      shape.orinetation === "right" ? shape.drawRightHex() : shape.drawLeftHex();
     } else {
-
+      shape.drawSqr();
     }
   }
 
@@ -60,6 +60,12 @@ class DynamicShape {
       this.shapes[i].drawLeftHex();
       i++;
       if (i < this.shapes.length) this.shapes[i].drawRightHex();
+    }
+  }
+
+  drawSqr(){
+    for (let i = 0; i < this.shapes.length; i++) {
+      this.shapes[i].drawSqr();
     }
   }
 }

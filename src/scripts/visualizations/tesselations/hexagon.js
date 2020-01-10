@@ -35,7 +35,7 @@ class Hexagon {
     this.selectedGrowth();
     this.orinetation = "right";
     this.ctx.fillStyle = "#ACC2F1"; // BLUE1
-    this.ctx.strokeStyle = "#000"; // BLUE1
+    this.ctx.strokeStyle = "#000";
     this.ctx.beginPath();
     this.ctx.moveTo(this.x, this.y);
     this.ctx.lineTo(this.x + this.diagLength, this.y + this.diagLength);
@@ -52,7 +52,7 @@ class Hexagon {
     this.selectedGrowth();
     this.orinetation = "left";
     this.ctx.fillStyle = "#84A7F2"; //BLUE2
-    this.ctx.strokeStyle = "#000"; //BLUE2
+    this.ctx.strokeStyle = "#000";
     this.ctx.beginPath();
     this.ctx.moveTo(this.x + this.diagLength + this.sideLength, this.y - this.diagLength);
     this.ctx.lineTo(this.x + 2 * this.diagLength + this.sideLength, this.y);
