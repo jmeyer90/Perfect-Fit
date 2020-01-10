@@ -28,6 +28,7 @@ class Square {
   }
 
   drawSqr() {
+    this.selectedGrowth();
     if (this.row % 2 === 0) this.x = this.x - this.sideLength;
     this.ctx.fillStyle = this.col % 2 === 0 ? "#ACC2F1" : "#84A7F2"; // BLUE_1 : BLUE_2
     this.ctx.strokeStyle = "#000";
