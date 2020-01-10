@@ -16,7 +16,7 @@ const hexTessVis = ctx => {
   const lineHeight = diagLength * 2
   const numCols = Math.ceil(window.innerWidth / hexSideLength);
   const startHeight = window.innerHeight / 3.0;
-  const vertShift = 6;
+  const vertShift = 8;
 
   for (let col = 0; col < numCols; col++) {
     let x = col * (2 * hexSideLength + 2 * diagLength) - 2 * diagLength;

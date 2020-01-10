@@ -51,7 +51,7 @@ const tessFooter = (tessInfo) => {
 }
 
 const tessDesc = ( headerDesc) =>{
-  const text = "A tessellation is a pattern made by a regular polygon which completely fills the are with no gaps. " +
+  const text = "A tessellation is a pattern made by a regular polygon which completely fills a plane with no gaps. " +
     "There are only 3 regular polygons which can make a tessellation. "+
     "These polgyons are:";
 
