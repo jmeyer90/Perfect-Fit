@@ -30,7 +30,7 @@ class DynamicShape {
     for(let i = 0; i < this.shapes.length; i++){
       this.shapes[i].drawUpTri();
       i++;
-      this.shapes[i].drawDownTri();
+      if( i <  this.shapes.length ) this.shapes[i].drawDownTri();
     }
   }
 }
