@@ -17,7 +17,6 @@ class Hexagon {
       this.sideLength = this.sideLength + 2 * this.delta;
       this.diagLength = this.sideLength / Math.sqrt(2);
     }
-    debugger
   }
 
   unselect() {
@@ -28,7 +27,6 @@ class Hexagon {
       this.sideLength = this.sideLength - 2 * this.delta;
       this.diagLength = this.sideLength / Math.sqrt(2);
     }
-    debugger
   }
 
   drawLeftHex() {

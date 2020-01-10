@@ -58,7 +58,6 @@ const hexTessVis = ctx => {
     const x = e.x - canX;
     const y = e.y - canY;
     const hex = dynShap.selectShape(x, y);
-    debugger
     dynShap.setSelected(hex);
   }
 
@@ -66,7 +65,6 @@ const hexTessVis = ctx => {
     const x = e.x - canX;
     const y = e.y - canY;
     const hex = dynShap.selectShape(x, y);
-    debugger
     if (hex) dynShap.unselect(hex, ctx);
   }
 

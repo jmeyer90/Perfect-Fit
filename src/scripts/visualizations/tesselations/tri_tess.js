@@ -42,7 +42,6 @@ const triTessVis = ctx =>{
   }
 
   const mouseOut = e => {
-    debugger
     const x = e.x - canX;
     const y = e.y - canY;
     const tri = dynShap.selectShape(x, y);
