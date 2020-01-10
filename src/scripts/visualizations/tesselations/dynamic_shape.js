@@ -20,9 +20,7 @@ class DynamicShape {
   }
 
   setSelected(shape){
-    for(let i = 0; i < this.shapes.length; i++){
-      this.shapes[i].selected = this.shapes[i] === shape;
-    }
+    shape.selected = true;
     if( shape instanceof Triangle){
       shape.orientation === "up" ? shape.drawUpTri() : shape.drawDownTri();
     } else if (shape instanceof Hexagon){

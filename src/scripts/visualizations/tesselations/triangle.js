@@ -61,7 +61,7 @@ class Triangle {
     //refactor for up triangles and down traingles
     return(
       (x >= this.x ) && ( x <= this.x + this.sideLength) &&
-      (y >= this.y ) && ( y <= this.y + this.sideLength)
+      (y >= this.y ) && ( y <= this.y + this.lineHeight)
     )
   }
 }

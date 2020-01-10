@@ -14,7 +14,7 @@ class Square {
     if (this.selected) {
       this.x = this.x - this.delta;
       this.y = this.y - this.delta;
-      this.sideLength = this.sideLength + 2 * this.delta;
+      this.sideLength = this.sideLength + (2 * this.delta);
     }
   }
 
@@ -23,7 +23,7 @@ class Square {
       this.selected = false;
       this.x = this.x + this.delta;
       this.y = this.y + this.delta;
-      this.sideLength = this.sideLength - 2 * this.delta;
+      this.sideLength = this.sideLength - (2 * this.delta);
     }
   }
 

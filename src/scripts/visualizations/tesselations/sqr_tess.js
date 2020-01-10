@@ -36,17 +36,17 @@ const sqrTessVis = ctx => {
   const mouseOver = e => {
     const x = e.x - canX;
     const y = e.y - canY;
-    const hex = dynShape.selectShape(x, y);
+    const sqr = dynShape.selectShape(x, y);
     debugger
-    dynShape.setSelected(hex);
+    dynShape.setSelected(sqr);
   }
 
   const mouseOut = e => {
     const x = e.x - canX;
     const y = e.y - canY;
-    const hex = dynShape.selectShape(x, y);
+    const sqr = dynShape.selectShape(x, y);
     debugger
-    if (hex) dynShape.unselect(hex, ctx);
+    if (sqr) dynShape.unselect(sqr, ctx);
   }
 
   ctx.canvas.addEventListener('mouseout', mouseOut);

@@ -14,7 +14,7 @@ class Hexagon {
     if (this.selected) {
       this.x = this.x - this.delta;
       this.y = this.y - this.delta;
-      this.sideLength = this.sideLength + 2 * this.delta;
+      this.sideLength = this.sideLength + (2 * this.delta);
       this.diagLength = this.sideLength / Math.sqrt(2);
     }
   }
@@ -24,7 +24,7 @@ class Hexagon {
       this.selected = false;
       this.x = this.x + this.delta;
       this.y = this.y + this.delta;
-      this.sideLength = this.sideLength - 2 * this.delta;
+      this.sideLength = this.sideLength - (2 * this.delta);
       this.diagLength = this.sideLength / Math.sqrt(2);
     }
   }
@@ -66,8 +66,8 @@ class Hexagon {
   hover(x, y) {
     //refactor for Hexagon
     return (
-      (x >= this.x) && (x <= this.x + this.sideLength) &&
-      (y >= this.y) && (y <= this.y + this.sideLength)
+      (x >= this.x) && (x <= this.x + this.sideLength + (2 * this.diagLength)) &&
+      (y >= this.y) && (y <= this.y + (2 * this.diagLength))
     )
   }
 }
