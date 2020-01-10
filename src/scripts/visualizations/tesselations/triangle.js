@@ -27,13 +27,10 @@ class Triangle {
       this.lineHeight = this.lineHeight - 2 * this.delta;
       this.sideLength = this.sideLength - 2 * this.delta;
     }
-    debugger
-    this.orinetation === "up" ? this.drawUpTri() : this.drawDownTri();
   }
 
   drawUpTri(){
     this.selectedGrowth();
-    debugger
     this.orinetation = "up";
     this.ctx.fillStyle = "#ACC2F1"; // BLUE1
     this.ctx.strokeStyle = "#000"; // BLUE1
@@ -48,7 +45,6 @@ class Triangle {
 
   drawDownTri(){
     this.selectedGrowth();
-    debugger
     this.orinetation = "down";
     this.ctx.fillStyle = "#84A7F2"; //BLUE2
     this.ctx.strokeStyle = "#000"; //BLUE2
@@ -65,7 +61,7 @@ class Triangle {
     //refactor for up triangles and down traingles
     return(
       (x >= this.x ) && ( x <= this.x + this.sideLength) &&
-      (y >= this.y ) && ( x <= this.x + this.sideLength)
+      (y >= this.y ) && ( y <= this.y + this.sideLength)
     )
   }
 }

@@ -5,6 +5,8 @@
 import triTessVis from './tri_tess';
 import sqrTessVis from './sqr_tess';
 import hexTessVis from './hex_tess';
+import Triangle from './triangle';
+import Hexagon from './hexagon';
 
 class DynamicShape {
   constructor(canvas){
@@ -21,7 +23,13 @@ class DynamicShape {
       this.shapes[i].selected = this.shapes[i] === shape;
     }
     debugger
-    shape.orientation === "up" ? shape.drawUpTri() : shape.drawDownTri();
+    if( shape instanceof Triangle){
+      shape.orientation === "up" ? shape.drawUpTri() : shape.drawDownTri();
+    } else if (shape instanceof Hexagon){
+
+    } else {
+
+    }
   }
 
   selectShape(x,y){
@@ -44,6 +52,14 @@ class DynamicShape {
       this.shapes[i].drawUpTri();
       i++;
       if( i <  this.shapes.length ) this.shapes[i].drawDownTri();
+    }
+  }
+
+  drawHex(){
+    for (let i = 0; i < this.shapes.length; i++) {
+      this.shapes[i].drawLeftHex();
+      i++;
+      if (i < this.shapes.length) this.shapes[i].drawRightHex();
     }
   }
 }

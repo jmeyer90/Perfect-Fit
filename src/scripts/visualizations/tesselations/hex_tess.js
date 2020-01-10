@@ -1,3 +1,6 @@
+import Hexagon from "./hexagon";
+import DynamicShape from './dynamic_shape';
+
 // This code was inspired by the work of both
 // Cthulahoop at CodePen.com 
 // https://codepen.io/Cthulahoop/pen/umcvo)
@@ -30,39 +33,73 @@ const hexTessVis = ctx => {
     ctx.fill();
   }
 
+  let dynShap = new DynamicShape(ctx.canvas);
+
   for (let row = 0; row < numRows; row++) {
 
     for (let col = 0; col <= numCols; col++) {
       let x = col * (2 * hexSideLength + 2 * diagLength) - 2 * diagLength;
       let y = row * lineHeight + startHeight + diagLength - vertShift;
 
-      ctx.fillStyle = "#ACC2F1"; // BLUE1
-      ctx.strokeStyle = "#000"; // BLUE1
-      ctx.beginPath();
-      ctx.moveTo(x, y);
-      ctx.lineTo(x + diagLength, y + diagLength);
-      ctx.lineTo(x + diagLength + hexSideLength, y + diagLength);
-      ctx.lineTo(x + 2*diagLength + hexSideLength, y);
-      ctx.lineTo(x + diagLength + hexSideLength, y - diagLength);
-      ctx.lineTo(x + diagLength, y-diagLength);
-      ctx.closePath();
-      ctx.stroke();
-      ctx.fill();
-      
-      ctx.fillStyle = "#84A7F2"; //BLUE2
-      ctx.strokeStyle = "#000"; //BLUE2
-      ctx.beginPath();
-      ctx.moveTo(x + diagLength + hexSideLength, y - diagLength);
-      ctx.lineTo(x + 2 * diagLength + hexSideLength, y);
-      ctx.lineTo(x + 2 * diagLength + 2 * hexSideLength, y);
-      ctx.lineTo(x + 3 * diagLength + 2 * hexSideLength, y - diagLength);
-      ctx.lineTo(x + 2 * diagLength + 2* hexSideLength, y - 2 * diagLength);
-      ctx.lineTo(x + 2 * diagLength + hexSideLength, y - 2* diagLength);
-      ctx.closePath();
-      ctx.stroke();
-      ctx.fill();
+      //x,y,diagLength, hexSideLength, ctx
+      let leftHex = new Hexagon(x, y, hexSideLength, diagLength, ctx); 
+      let rightHex = new Hexagon(x, y, hexSideLength, diagLength, ctx);
+
+      dynShap.addShape(leftHex);
+      dynShap.addShape(rightHex);
     }
   }
+
+  dynShap.drawHex();
+
+  const canX = ctx.canvas.offsetLeft;
+  const canY = ctx.canvas.offsetTop;
+
+  const mouseOver = e => {
+    const x = e.x - canX;
+    const y = e.y - canY;
+    const hex = dynShap.selectShape(x, y);
+    debugger
+    dynShap.setSelected(hex);
+  }
+
+  const mouseOut = e => {
+    const x = e.x - canX;
+    const y = e.y - canY;
+    const hex = dynShap.selectShape(x, y);
+    debugger
+    if (hex) dynShap.unselect(hex, ctx);
+  }
+
+  ctx.canvas.addEventListener('mouseout', mouseOut);
+  ctx.canvas.addEventListener('mouseover', mouseOver);
 }
 
 export default hexTessVis;
+
+
+// ctx.fillStyle = "#ACC2F1"; // BLUE1
+// ctx.strokeStyle = "#000"; // BLUE1
+// ctx.beginPath();
+// ctx.moveTo(x, y);
+// ctx.lineTo(x + diagLength, y + diagLength);
+// ctx.lineTo(x + diagLength + hexSideLength, y + diagLength);
+// ctx.lineTo(x + 2*diagLength + hexSideLength, y);
+// ctx.lineTo(x + diagLength + hexSideLength, y - diagLength);
+// ctx.lineTo(x + diagLength, y-diagLength);
+// ctx.closePath();
+// ctx.stroke();
+// ctx.fill();
+
+// ctx.fillStyle = "#84A7F2"; //BLUE2
+// ctx.strokeStyle = "#000"; //BLUE2
+// ctx.beginPath();
+// ctx.moveTo(x + diagLength + hexSideLength, y - diagLength);
+// ctx.lineTo(x + 2 * diagLength + hexSideLength, y);
+// ctx.lineTo(x + 2 * diagLength + 2 * hexSideLength, y);
+// ctx.lineTo(x + 3 * diagLength + 2 * hexSideLength, y - diagLength);
+// ctx.lineTo(x + 2 * diagLength + 2* hexSideLength, y - 2 * diagLength);
+// ctx.lineTo(x + 2 * diagLength + hexSideLength, y - 2* diagLength);
+// ctx.closePath();
+// ctx.stroke();
+// ctx.fill();

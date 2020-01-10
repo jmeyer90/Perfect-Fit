@@ -20,7 +20,7 @@ const sqrTessVis = ctx => {
       let color = col % 2 === 0 ? "#ACC2F1" : "#84A7F2"; // BLUE1 : BLUE2;
 
       ctx.fillStyle = color;
-      ctx.strokeStyle = color;
+      ctx.strokeStyle = "#000";
       ctx.beginPath();
       ctx.moveTo(x, y);
       ctx.lineTo(x, y + sqrSideLength);

@@ -4,9 +4,9 @@
 // and 
 // Siamand and StackOverflox.com
 // https://stackoverflow.com/questions/43788062/html-canvas-javascript-scale-object-on-hover
+
 import DynamicShape from './dynamic_shape';
 import Triangle from './triangle';
-
 
 const triTessVis = ctx =>{
   const numRows = 3;
@@ -35,22 +35,21 @@ const triTessVis = ctx =>{
   const canY = ctx.canvas.offsetTop;
   
   const mouseMove = e => {
-    const x = e.x - canX;
+    const x = e.x - canX
     const y = e.y - canY;
     const tri = dynShap.selectShape(x,y);
-    debugger
     dynShap.setSelected(tri);
   }
 
   const mouseOut = e => {
+    debugger
     const x = e.x - canX;
     const y = e.y - canY;
     const tri = dynShap.selectShape(x, y);
-    debugger
     if(tri) dynShap.unselect(tri, ctx);
   }
 
-  ctx.canvas.addEventListener('mousemove', mouseMove);
+  ctx.canvas.addEventListener('mouseover', mouseMove);
   ctx.canvas.addEventListener('mouseout', mouseOut);
 }
 
