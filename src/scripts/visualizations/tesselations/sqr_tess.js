@@ -7,6 +7,7 @@
 
 import DynamicShape from './dynamic_shape';
 import Square from './square';
+// import { mouseOver, mouseOut } from './tess_mouse_actions';
 
 const sqrTessVis = ctx => {
   const numRows = 3;
@@ -35,17 +36,17 @@ const sqrTessVis = ctx => {
   const mouseOver = e => {
     const x = e.x - canX;
     const y = e.y - canY;
-    const hex = dynShap.selectShape(x, y);
+    const hex = dynShape.selectShape(x, y);
     debugger
-    dynShap.setSelected(hex);
+    dynShape.setSelected(hex);
   }
 
   const mouseOut = e => {
     const x = e.x - canX;
     const y = e.y - canY;
-    const hex = dynShap.selectShape(x, y);
+    const hex = dynShape.selectShape(x, y);
     debugger
-    if (hex) dynShap.unselect(hex, ctx);
+    if (hex) dynShape.unselect(hex, ctx);
   }
 
   ctx.canvas.addEventListener('mouseout', mouseOut);

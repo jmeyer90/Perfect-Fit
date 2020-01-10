@@ -7,6 +7,7 @@
 
 import Hexagon from "./hexagon";
 import DynamicShape from './dynamic_shape';
+// import { mouseOver, mouseOut } from './tess_mouse_actions';
 
 const hexTessVis = ctx => {
   const numRows = 6;

@@ -7,6 +7,7 @@ import sqrTessVis from './sqr_tess';
 import hexTessVis from './hex_tess';
 import Triangle from './triangle';
 import Hexagon from './hexagon';
+import Square from './square';
 
 class DynamicShape {
   constructor(canvas){
@@ -26,7 +27,7 @@ class DynamicShape {
       shape.orientation === "up" ? shape.drawUpTri() : shape.drawDownTri();
     } else if (shape instanceof Hexagon){
       shape.orinetation === "right" ? shape.drawRightHex() : shape.drawLeftHex();
-    } else {
+    } else if (shape instanceof Square){
       shape.drawSqr();
     }
   }

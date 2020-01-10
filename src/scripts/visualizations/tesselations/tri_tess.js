@@ -7,6 +7,7 @@
 
 import DynamicShape from './dynamic_shape';
 import Triangle from './triangle';
+// import { mouseOver, mouseOut } from './tess_mouse_actions';
 
 const triTessVis = ctx =>{
   const numRows = 3;
@@ -34,13 +35,13 @@ const triTessVis = ctx =>{
   const canX = ctx.canvas.offsetLeft;
   const canY = ctx.canvas.offsetTop;
   
-  const mouseMove = e => {
+  const mouseOver = e => {
     const x = e.x - canX
     const y = e.y - canY;
     const tri = dynShap.selectShape(x,y);
     dynShap.setSelected(tri);
   }
-
+  
   const mouseOut = e => {
     const x = e.x - canX;
     const y = e.y - canY;
@@ -48,8 +49,12 @@ const triTessVis = ctx =>{
     if(tri) dynShap.unselect(tri, ctx);
   }
 
-  ctx.canvas.addEventListener('mouseover', mouseMove);
   ctx.canvas.addEventListener('mouseout', mouseOut);
+  ctx.canvas.addEventListener('mouseover', mouseOver);
 }
 
 export default triTessVis;
+  
+  
+  // ctx.canvas.on('mouseover', (e) => mouseOver(e, ctx, dynShap));
+  // ctx.canvas.on('mouseout', (e) => mouseOut( e, ctx, dynShap));
