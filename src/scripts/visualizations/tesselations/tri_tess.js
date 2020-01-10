@@ -38,11 +38,20 @@ const triTessVis = ctx =>{
     const x = e.x - canX;
     const y = e.y - canY;
     const tri = dynShap.selectShape(x,y);
-  
-    dynShap.setSelectd(tri);
+    debugger
+    dynShap.setSelected(tri);
+  }
+
+  const mouseOut = e => {
+    const x = e.x - canX;
+    const y = e.y - canY;
+    const tri = dynShap.selectShape(x, y);
+    debugger
+    if(tri) dynShap.unselect(tri, ctx);
   }
 
   ctx.canvas.addEventListener('mousemove', mouseMove);
+  ctx.canvas.addEventListener('mouseout', mouseOut);
 }
 
 export default triTessVis;

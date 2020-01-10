@@ -19,11 +19,24 @@ class Triangle {
     }
   }
 
+  unselect(){
+    if (this.selected){
+      this.selected = false;
+      this.x = this.x + this.delta;
+      this.y = this.y + this.delta;
+      this.lineHeight = this.lineHeight - 2 * this.delta;
+      this.sideLength = this.sideLength - 2 * this.delta;
+    }
+    debugger
+    this.orinetation === "up" ? this.drawUpTri() : this.drawDownTri();
+  }
+
   drawUpTri(){
     this.selectedGrowth();
+    debugger
     this.orinetation = "up";
     this.ctx.fillStyle = "#ACC2F1"; // BLUE1
-    this.ctx.strokeStyle = "#ACC2F1"; // BLUE1
+    this.ctx.strokeStyle = "#000"; // BLUE1
     this.ctx.beginPath();
     this.ctx.moveTo(this.x, this.y);
     this.ctx.lineTo(this.x + (this.sideLength / 2), this.y + this.lineHeight);
@@ -35,9 +48,10 @@ class Triangle {
 
   drawDownTri(){
     this.selectedGrowth();
+    debugger
     this.orinetation = "down";
     this.ctx.fillStyle = "#84A7F2"; //BLUE2
-    this.ctx.strokeStyle = "#84A7F2"; //BLUE2
+    this.ctx.strokeStyle = "#000"; //BLUE2
     this.ctx.beginPath();
     this.ctx.moveTo(this.x, this.y);
     this.ctx.lineTo(this.x + this.sideLength, this.y);

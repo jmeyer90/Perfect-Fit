@@ -2,6 +2,10 @@
 // Siamand and StackOverflox.com
 // https://stackoverflow.com/questions/43788062/html-canvas-javascript-scale-object-on-hover
 
+import triTessVis from './tri_tess';
+import sqrTessVis from './sqr_tess';
+import hexTessVis from './hex_tess';
+
 class DynamicShape {
   constructor(canvas){
     this.canvs = canvas;
@@ -16,7 +20,8 @@ class DynamicShape {
     for(let i = 0; i < this.shapes.length; i++){
       this.shapes[i].selected = this.shapes[i] === shape;
     }
-    this.draw();
+    debugger
+    shape.orientation === "up" ? shape.drawUpTri() : shape.drawDownTri();
   }
 
   selectShape(x,y){
@@ -24,6 +29,14 @@ class DynamicShape {
       if(this.shapes[i].hover(x,y)) return this.shapes[i];
     }
     return null;
+  }
+
+  unselect(shape, ctx){
+    shape.unselect();
+    this.shapes = [];
+    triTessVis(ctx);
+    hexTessVis(ctx);
+    sqrTessVis(ctx);
   }
 
   drawTri(){

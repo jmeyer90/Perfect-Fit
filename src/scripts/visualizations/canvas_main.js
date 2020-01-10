@@ -2,14 +2,13 @@ import triTessVis from './tesselations/tri_tess';
 import sqrTessVis from './tesselations/sqr_tess';
 import hexTessVis from './tesselations/hex_tess';
 
-
 const canvasMain = (selected) =>{
   const canvas = document.getElementById('canvas');
   const ctx = canvas.getContext('2d');
   ctx.canvas.width = window.innerWidth;
   ctx.canvas.height = window.innerHeight;
   ctx.lineWidth = .4;
-  let disp = false
+  let disp = false;
 
   switch (selected) {
     case "tess":
